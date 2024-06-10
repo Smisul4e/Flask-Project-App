@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>Hello, {{ name }}!</h1>
-    <p>The current time is: {{ current_time }}</p>
-</body>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>Hello, {{ name }}!</h1>
+        <p>Current time: {{ current_time }}</p>
+        <ul>
+            {% for user, details in users.items() %}
+                <li>
+                    {{ user }} is {{ details['age'] }} years old from {{ details['country'] }}.
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
 </html>
