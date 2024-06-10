@@ -9,8 +9,8 @@
     <ul>
         {% for user, details in users.items() %}
             <li>
-                {% if details['country'] == 'USA' %}
-                    {{ user }} is {{ details['age'] }} years old from {{ details['country'] }}. Special message for USA users: Welcome!
+                {% if user == name %}
+                    {{ user }} is {{ details['age'] }} years old from {{ details['country'] }}. Special message for you!
                 {% else %}
                     {{ user }} is {{ details['age'] }} years old from {{ details['country'] }}.
                 {% endif %}
