@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Hello, {{ name }}!</h1>
+    <p>Current time: {{ current_time }}</p>
+    <ul>
+        {% for user, details in users.items() %}
+            <li>
+                {% if details['country'] == 'USA' %}
+                    {{ user }} is {{ details['age'] }} years old from {{ details['country'] }}. Special message for USA users: Welcome!
+                {% else %}
+                    {{ user }} is {{ details['age'] }} years old from {{ details['country'] }}.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
