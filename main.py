@@ -48,5 +48,11 @@ def show_subpath(subpath):
     return f"Subpath {subpath}"
 
 
+# Нов маршрут, който приема целочислен параметър
+@app.route('/item/<int:item_id>')
+def show_item(item_id):
+    return render_template('item.html', title='Item', item_id=item_id)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
