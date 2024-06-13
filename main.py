@@ -3,7 +3,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Създаваме примерен речник с потребители
+# Примерен речник с потребители
 users = {
     'Alice': {'age': 25, 'country': 'USA'},
     'Bob': {'age': 30, 'country': 'UK'},
