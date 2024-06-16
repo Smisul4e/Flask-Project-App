@@ -20,8 +20,8 @@
             {% for user, details in users.items() %}
                 <tr>
                     <td>{{ user }}</td>
-                    <td>{{ details.age }}</td>
-                    <td>{{ details.country }}</td>
+                    <td>{{ details['age'] }}</td>
+                    <td>{{ details['country'] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
