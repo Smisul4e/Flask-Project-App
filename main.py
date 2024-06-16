@@ -59,5 +59,19 @@ def update_profile():
 def update_profile_form():
     return render_template('update_profile.html', title='Update Profile')
 
+# Нов маршрут за актуализиране на страната на потребител
+@app.route('/update-country', methods=['GET', 'POST'])
+def update_country():
+    if request.method == 'POST':
+        name = request.form['name']
+        country = request.form['country']
+        if name in users:
+            users[name]['country'] = country
+            message = f"Updated {name}'s country to {country}."
+        else:
+            message = f"User {name} not found."
+        return render_template('update_country.html', title='Update Country', message=message)
+    return render_template('update_country.html', title='Update Country')
+
 if __name__ == '__main__':
     app.run(debug=True)
