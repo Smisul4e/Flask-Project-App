@@ -11,7 +11,7 @@
     <p>Current time: {{ current_time }}</p>
     <ul>
         {% for user, details in users.items() %}
-            <li>{{ user }} is {{ details.age }} years old from {{ details.country }}.</li>
+            <li>{{ user }} is {{ details['age'] }} years old from {{ details['country'] }}.</li>
         {% endfor %}
     </ul>
 </body>

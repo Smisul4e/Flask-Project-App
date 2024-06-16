@@ -49,5 +49,15 @@ def greet_query():
     name = request.args.get('name', 'Guest')
     return f"Hello, {name}!"
 
+@app.route('/update_profile', methods=['POST'])
+def update_profile():
+    username = request.form['username']
+    email = request.form['email']
+    return f"Updating profile of {username} with email {email}"
+
+@app.route('/update-profile-form')
+def update_profile_form():
+    return render_template('update_profile.html', title='Update Profile')
+
 if __name__ == '__main__':
     app.run(debug=True)
