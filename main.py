@@ -69,7 +69,8 @@ def update_country():
             users[name]['country'] = country
             message = f"Updated {name}'s country to {country}."
         else:
-            message = f"User {name} not found."
+            users[name] = {'age': 0, 'country': country}
+            message = f"Added new user {name} with country {country}."
         return render_template('update_country.html', title='Update Country', message=message)
     return render_template('update_country.html', title='Update Country')
 
