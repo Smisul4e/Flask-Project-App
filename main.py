@@ -14,15 +14,18 @@ users = {
     'Charlie': {'age': 35, 'country': 'Australia'}
 }
 
+
 @app.route('/')
 def index():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    name = request.args.get('name', 'Guest')
+    name = request.args.get('name', 'Plam')
     return render_template('index.html', title='Home Page', name=name, current_time=current_time)
+
 
 @app.route('/all-users')
 def all_users():
     return render_template('all_users.html', title='All Users', users=users)
+
 
 @app.route('/update-country', methods=['GET', 'POST'])
 def update_country():
@@ -36,10 +39,12 @@ def update_country():
             return f"User {name} not found."
     return render_template('update_country.html', title='Update Country')
 
+
 # Custom error handler for 404 - Page Not Found
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found(_):
     return render_template('404.html', title='404 - Page Not Found 😞'), 404
+
 
 if __name__ == '__main__':
     app.run(debug=True)
