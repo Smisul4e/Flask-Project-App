@@ -36,5 +36,10 @@ def update_country():
             return f"User {name} not found."
     return render_template('update_country.html', title='Update Country')
 
+# Custom error handler for 404 - Page Not Found
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html', title='404 - Page Not Found 😞'), 404
+
 if __name__ == '__main__':
     app.run(debug=True)
