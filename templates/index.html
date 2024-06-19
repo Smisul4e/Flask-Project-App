@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ current_time }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <img src="{{ url_for('static', filename='images/logo.png') }}?v={{ current_time }}" alt="Logo">
-    <h1>{{ title }}</h1>
-    <p>Welcome, {{ name }}! The current time is {{ current_time }}.</p>
+    <header>
+        <img src="{{ url_for('static', filename='images/Plam7.jpg') }}" alt="Logo">
+    </header>
+    <main>
+        <h1>Welcome, {{ name }}!</h1>
+        <p>Current time: {{ current_time }}</p>
+    </main>
 </body>
 </html>

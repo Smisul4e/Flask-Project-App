@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ current_time }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <img src="{{ url_for('static', filename='images/logo.png') }}?v={{ current_time }}" alt="Logo">
-    <h1>{{ title }}</h1>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Country</th>
-        </tr>
-        {% for user, details in users.items() %}
-        <tr>
-            <td>{{ user }}</td>
-            <td>{{ details.age }}</td>
-            <td>{{ details.country }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <header>
+        <img src="{{ url_for('static', filename='images/Plam7.jpg') }}" alt="Logo">
+    </header>
+    <main>
+        <h1>All Users</h1>
+        <ul>
+            {% for name, details in users.items() %}
+            <li>{{ name }} - Age: {{ details.age }}, Country: {{ details.country }}</li>
+            {% endfor %}
+        </ul>
+    </main>
 </body>
 </html>
