@@ -1,22 +1,20 @@
-<!-- update_country.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ current_time }}">
 </head>
 <body>
-    <h1>Update Country</h1>
-    <form action="/update-country" method="post">
+    <img src="{{ url_for('static', filename='images/logo.png') }}?v={{ current_time }}" alt="Logo">
+    <h1>{{ title }}</h1>
+    <form method="post">
         <label for="name">Username:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name"><br><br>
         <label for="country">Country:</label><br>
-        <input type="text" id="country" name="country" required><br><br>
-        <input type="submit" value="Update Country">
+        <input type="text" id="country" name="country"><br><br>
+        <input type="submit" value="Submit">
     </form>
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
 </body>
 </html>

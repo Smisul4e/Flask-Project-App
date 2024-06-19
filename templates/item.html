@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ current_time }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Item {{ item_id }}</h1>
-    </div>
+    <img src="{{ url_for('static', filename='images/logo.png') }}?v={{ current_time }}" alt="Logo">
+    <h1>{{ title }}</h1>
+    <p>Item ID: {{ item_id }}</p>
 </body>
 </html>

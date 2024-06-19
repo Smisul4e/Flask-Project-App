@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ current_time }}">
 </head>
 <body>
-    <h1>Want a greeting?</h1>
-    <form action="/" method="GET">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
+    <img src="{{ url_for('static', filename='images/logo.png') }}?v={{ current_time }}" alt="Logo">
+    <h1>{{ title }}</h1>
+    <form method="post" action="{{ url_for('update_profile') }}">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
         <input type="submit" value="Submit">
     </form>
 </body>
